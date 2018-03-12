@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  aditilambdafunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: aditilambdafunction.lambda_handler
+      Runtime: python2.7
+      CodeUri: s3://managenginxlambdafunction/aditilambdafunction.zip
+      Description: ''
+      MemorySize: 128
+      Timeout: 300
+      Role: 'arn:aws:iam::998924411086:role/LambdaEXECUTEandSSM'
+      Events:
+        SNS1:
+          Type: SNS
+          Properties:
+            Topic:
+              Ref: SNSTopic1
+  SNSTopic1:
+    Type: 'AWS::SNS::Topic'
