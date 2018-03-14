@@ -28,7 +28,7 @@ def lambda_handler(event, context):
              ],
          DocumentName = 'AWS-RunShellScript',
          TimeoutSeconds = 5000,
-         Comment = 'Start/Stop nginx',
+         Comment = 'Start/Stop  test nginx',
          
          Parameters = {
              "commands": COMMANDS
