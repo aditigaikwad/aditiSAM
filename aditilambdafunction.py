@@ -10,10 +10,10 @@ def lambda_handler(event, context):
     print("From SNS: " + message)
     #return message
     
-    if message == "start": 
+    if message == "open": 
         COMMANDS=["sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT"]
     
-    if message == "stop":
+    if message == "close":
         COMMANDS=["sudo iptables -I INPUT -p tcp --dport 80 -j DROP"]
     
     
