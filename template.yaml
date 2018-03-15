@@ -8,7 +8,7 @@ Resources:
       Handler: aditilambdafunction.lambda_handler
       Runtime: python2.7
       AutoPublishAlias: live
-      CodeUri: s3://adititestsam/PushS3bucket-53/aditilambdafunction.zip
+      CodeUri: s3://adititestsam/aditilambdafunction.zip
       Description: ''
       MemorySize: 128
       Timeout: 300
