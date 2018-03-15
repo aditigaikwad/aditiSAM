@@ -1,6 +1,11 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: An AWS Serverless Specification template describing your function.
+Parameters:
+    BucketName:
+        Type: adititestsam
+    CodeKey:
+        Type: version1
 Resources:
   aditilambdafunction:
     Type: 'AWS::Serverless::Function'
@@ -8,7 +13,10 @@ Resources:
       Handler: aditilambdafunction.lambda_handler
       Runtime: python2.7
       AutoPublishAlias: live
-      CodeUri: s3://adititestsam/aditilambdafunction.zip
+      CodeUri:  # !Ref function allows you to fetch value 
+                # of parameters and other resources at runtime
+                Bucket: !Ref BucketName
+                Key: !Ref CodeKey
       Description: ''
       MemorySize: 128
       Timeout: 300
