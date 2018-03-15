@@ -7,6 +7,7 @@ Resources:
     Properties:
       Handler: aditilambdafunction.lambda_handler
       Runtime: python2.7
+      AutoPublishAlias: live
       CodeUri: s3://managenginxlambdafunction/aditilambdafunction.zip
       Description: ''
       MemorySize: 128
