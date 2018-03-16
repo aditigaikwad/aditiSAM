@@ -6,13 +6,15 @@ Parameters:
         Type: String
     CodeKey:
         Type: String
+    version:
+        Type: String
 Resources:
   aditilambdafunction:
     Type: 'AWS::Serverless::Function'
     Properties:
       Handler: aditilambdafunction.lambda_handler
       Runtime: python2.7
-      AutoPublishAlias: live
+      AutoPublishAlias: !Ref version
       CodeUri:  # !Ref function allows you to fetch value 
                 # of parameters and other resources at runtime
                 Bucket: !Ref BucketName
