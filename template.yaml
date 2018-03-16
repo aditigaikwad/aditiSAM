@@ -6,7 +6,7 @@ Parameters:
         Type: String
     CodeKey:
         Type: String
-    version:
+    AliasName:
         Type: String
 Resources:
   aditilambdafunction:
@@ -14,7 +14,7 @@ Resources:
     Properties:
       Handler: aditilambdafunction.lambda_handler
       Runtime: python2.7
-      AutoPublishAlias: !Ref version
+      AutoPublishAlias: !Ref AliasName
       CodeUri:  # !Ref function allows you to fetch value 
                 # of parameters and other resources at runtime
                 Bucket: !Ref BucketName
